@@ -19,7 +19,8 @@
                     },
                     {
                         "name": "citation_line",
-                        "type": "string"
+                        "size": "100",
+                        "type": "char"
                     }
                 ]
             },
@@ -32,55 +33,67 @@
                 "fields" : [
                     {
                         "name": "study_id",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "realm",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "climate",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "general_treat",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "treatment",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "treat_comments",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "treat_date",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "habitat",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "protected_area",
-                        "type": "boolean"
+                        "size": "10",
+                        "type": "char"
                     },
                     {
                         "name": "biome_map",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "taxa",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "organisms",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "title",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "ab_bio",
@@ -94,67 +107,71 @@
                     },
                     {
                         "name": "data_points",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "start_year",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "end_year",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "cent_lat",
-                        "type": "number"
+                        "type": "double"
                     },
                     {
                         "name": "cent_long",
-                        "type": "number"
+                        "type": "double"
                     },
                     {
                         "name": "number_of_species",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "number_of_samples",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "number_lat_long",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "total",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "grain_size_text",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "grain_sq_km",
-                        "type": "number"
-                    },
+                        "type": "double"
                     {
                         "name": "area_sq_km",
-                        "type": "number"
+                        "type": "double"
                     },
                     {
                         "name": "contact_1",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "contact_2",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "cont_1_mail",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "cont_2_mail",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "license",
@@ -163,35 +180,43 @@
                     },
                     {
                         "name": "web_link",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "data_source",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "methods",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "summary_methods",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "link_id",
-                        "type": "integer"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "comments",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "date_study_added",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "abundance_type",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "biomass_type",
@@ -200,7 +225,8 @@
                     },
                     {
                         "name": "sample_desc_name",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     }
                 ]
             },
@@ -213,11 +239,11 @@
                 "fields" : [
                     {
                         "name": "",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "study_id",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "day",
@@ -225,51 +251,55 @@
                     },
                     {
                         "name": "month",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "year",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "sample_desc",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "plot",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "id_species",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "latitude",
-                        "type": "number"
+                        "type": "double"
                     },
                     {
                         "name": "longitude",
-                        "type": "number"
+                        "type": "double"
                     },
                     {
                         "name": "sum.allrawdata.abundance",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "sum.allrawdata.abundance",
-                        "type": "integer"
+                        "type": "int"
                     },
                     {
                         "name": "genus",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "species",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     },
                     {
                         "name": "genus_species",
-                        "type": "string"
+                        "size": "30",
+                        "type": "char"
                     }
                 ]
             },
