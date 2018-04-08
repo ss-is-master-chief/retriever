@@ -14,11 +14,11 @@
             "schema": {
                 "fields" : [
                     {
-                        "name": "STUDY_ID",
+                        "name": "study_id",
                         "type": "number"
                     },
                     {
-                        "name": "CITATION_LINE",
+                        "name": "citation_line",
                         "type": "string"
                     }
                 ]
@@ -31,175 +31,175 @@
             "schema": {
                 "fields" : [
                     {
-                        "name": "STUDY_ID",
+                        "name": "study_id",
                         "type": "integer"
                     },
                     {
-                        "name": "REALM",
+                        "name": "realm",
                         "type": "string"
                     },
                     {
-                        "name": "CLIMATE",
+                        "name": "climate",
                         "type": "string"
                     },
                     {
-                       "name": "GENERAL_TREAT",
+                        "name": "general_treat",
                         "type": "string"
                     },
                     {
-                        "name": "TREATMENT",
+                        "name": "treatment",
                         "type": "string"
                     },
                     {
-                        "name": "TREAT_COMMENTS",
+                        "name": "treat_comments",
                         "type": "string"
                     },
                     {
-                        "name": "TREAT_DATE",
+                        "name": "treat_date",
                         "type": "string"
                     },
                     {
-                        "name": "HABITAT",
+                        "name": "habitat",
                         "type": "string"
                     },
                     {
-                        "name": "PROTECTED_AREA",
+                        "name": "protected_area",
                         "type": "boolean"
                     },
                     {
-                        "name": "BIOME_MAP",
+                        "name": "biome_map",
                         "type": "string"
                     },
                     {
-                        "name": "TAXA",
+                        "name": "taxa",
                         "type": "string"
                     },
                     {
-                        "name": "ORGANISMS",
+                        "name": "organisms",
                         "type": "string"
                     },
                     {
-                        "name": "TITLE",
+                        "name": "title",
                         "type": "string"
                     },
                     {
-                        "name": "AB_BIO",
+                        "name": "ab_bio",
                         "size": "2",
                         "type": "char"
                     },
                     {
-                        "name": "HAS_PLOT",
+                        "name": "has_plot",
                         "size": "1",
                         "type": "char"
                     },
                     {
-                        "name": "DATA_POINTS",
+                        "name": "data_points",
                         "type": "integer"
                     },
                     {
-                        "name": "START_YEAR",
+                        "name": "start_year",
                         "type": "integer"
                     },
                     {
-                        "name": "END_YEAR",
+                        "name": "end_year",
                         "type": "integer"
                     },
                     {
-                        "name": "CENT_LAT",
+                        "name": "cent_lat",
                         "type": "number"
                     },
                     {
-                        "name": "CENT_LONG",
+                        "name": "cent_long",
                         "type": "number"
                     },
                     {
-                        "name": "NUMBER_OF_SPECIES",
+                        "name": "number_of_species",
                         "type": "integer"
                     },
                     {
-                        "name": "NUMBER_OF_SAMPLES",
+                        "name": "number_of_samples",
                         "type": "integer"
                     },
                     {
-                        "name": "NUMBER_LAT_LONG",
+                        "name": "number_lat_long",
                         "type": "integer"
                     },
                     {
-                        "name": "TOTAL",
+                        "name": "total",
                         "type": "integer"
                     },
                     {
-                        "name": "GRAIN_SIZE_TEXT",
+                        "name": "grain_size_text",
                         "type": "string"
                     },
                     {
-                        "name": "GRAIN_SQ_KM",
+                        "name": "grain_sq_km",
                         "type": "number"
                     },
                     {
-                        "name": "AREA_SQ_KM",
+                        "name": "area_sq_km",
                         "type": "number"
                     },
                     {
-                        "name": "CONTACT_1",
+                        "name": "contact_1",
                         "type": "string"
                     },
                     {
-                        "name": "CONTACT_2",
+                        "name": "contact_2",
                         "type": "string"
                     },
                     {
-                        "name": "CONT_1_MAIL",
+                        "name": "cont_1_mail",
                         "type": "string"
                     },
                     {
-                        "name": "CONT_2_MAIL",
+                        "name": "cont_2_mail",
                         "type": "string"
                     },
                     {
-                        "name": "LICENSE",
+                        "name": "license",
                         "size": "10",
                         "type": "char"
                     },
                     {
-                        "name": "WEB_LINK",
+                        "name": "web_link",
                         "type": "string"
                     },
                     {
-                        "name": "DATA_SOURCE",
+                        "name": "data_source",
                         "type": "string"
                     },
                     {
-                        "name": "METHODS",
+                        "name": "methods",
                         "type": "string"
                     },
                     {
-                        "name": "SUMMARY_METHODS",
+                        "name": "summary_methods",
                         "type": "string"
                     },
                     {
-                        "name": "LINK_ID",
+                        "name": "link_id",
                         "type": "integer"
                     },
                     {
-                        "name": "COMMENTS",
+                        "name": "comments",
                         "type": "string"
                     },
                     {
-                        "name": "DATE_STUDY_ADDED",
+                        "name": "date_study_added",
                         "type": "string"
                     },
                     {
-                        "name": "ABUNDANCE_TYPE",
+                        "name": "abundance_type",
                         "type": "string"
                     },
                     {
-                        "name": "BIOMASS_TYPE",
+                        "name": "biomass_type",
                         "size": "10",
                         "type": "char"
                     },
                     {
-                        "name": "SAMPLE_DESC_NAME",
+                        "name": "sample_desc_name",
                         "type": "string"
                     }
                 ]
@@ -216,59 +216,59 @@
                         "type": "integer"
                     },
                     {
-                        "name": "STUDY_ID",
+                        "name": "study_id",
                         "type": "integer"
                     },
                     {
-                        "name": "DAY",
+                        "name": "day",
                         "type": "integer"
                     },
                     {
-                        "name": "MONTH",
+                        "name": "month",
                         "type": "integer"
                     },
                     {
-                        "name": "YEAR",
+                        "name": "year",
                         "type": "integer"
                     },
                     {
-                        "name": "SAMPLE_DESC",
+                        "name": "sample_desc",
                         "type": "string"
                     },
                     {
-                        "name": "PLOT",
+                        "name": "plot",
                         "type": "integer"
                     },
                     {
-                        "name": "ID_SPECIES",
+                        "name": "id_species",
                         "type": "integer"
                     },
                     {
-                        "name": "LATITUDE",
+                        "name": "latitude",
                         "type": "number"
                     },
                     {
-                        "name": "LONGITUDE",
+                        "name": "longitude",
                         "type": "number"
                     },
                     {
-                        "name": "sum.allrawdata.ABUNDANCE",
+                        "name": "sum.allrawdata.abundance",
                         "type": "integer"
                     },
                     {
-                        "name": "sum.allrawdata.ABUNDANCE",
+                        "name": "sum.allrawdata.abundance",
                         "type": "integer"
                     },
                     {
-                        "name": "GENUS",
+                        "name": "genus",
                         "type": "string"
                     },
                     {
-                        "name": "SPECIES",
+                        "name": "species",
                         "type": "string"
                     },
                     {
-                        "name": "GENUS_SPECIES",
+                        "name": "genus_species",
                         "type": "string"
                     }
                 ]
@@ -278,6 +278,6 @@
     ],
     "retriever": "True",
     "retriever_minimum_version": "2.0.0-dev",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "title": "BioTIME species identities and abundances"
 }
