@@ -149,6 +149,7 @@
                     {
                         "name": "grain_sq_km",
                         "type": "double"
+                    },
                     {
                         "name": "area_sq_km",
                         "type": "double"
