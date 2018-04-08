@@ -11,19 +11,268 @@
         {
             "dialect": {},
             "name": "citations",
-            "schema": {},
+            "schema": {
+                "fields" : [
+                    {
+                        "name": "STUDY_ID",
+                        "type": "number"
+                    },
+                    {
+                        "name": "CITATION_LINE",
+                        "type": "string"
+                    }
+                ]
+            },
             "url": "https://zenodo.org/record/1095628/files/BioTIMECitations_06_12_2017.csv"
         },
         {
             "dialect": {},
             "name": "metadata",
-            "schema": {},
+            "schema": {
+                "fields" : [
+                    {
+                        "name": "STUDY_ID",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "REALM",
+                        "type": "string"
+                    },
+                    {
+                        "name": "CLIMATE",
+                        "type": "string"
+                    },
+                    {
+                       "name": "GENERAL_TREAT",
+                        "type": ["string","null"]
+                    },
+                    {
+                        "name": "TREATMENT",
+                        "type": "string"
+                    },
+                    {
+                        "name": "TREAT_COMMENTS",
+                        "type": "string"
+                    },
+                    {
+                        "name": "TREAT_DATE",
+                        "type": "string"
+                    },
+                    {
+                        "name": "HABITAT",
+                        "type": "string"
+                    },
+                    {
+                        "name": "PROTECTED_AREA",
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "BIOME_MAP",
+                        "type": "string"
+                    },
+                    {
+                        "name": "TAXA",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ORGANISMS",
+                        "type": "string"
+                    },
+                    {
+                        "name": "TITLE",
+                        "type": "string"
+                    },
+                    {
+                        "name": "AB_BIO",
+                        "size": "2",
+                        "type": "char"
+                    },
+                    {
+                        "name": "HAS_PLOT",
+                        "size": "1",
+                        "type": "char"
+                    },
+                    {
+                        "name": "DATA_POINTS",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "START_YEAR",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "END_YEAR",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "CENT_LAT",
+                        "type": "number"
+                    },
+                    {
+                        "name": "CENT_LONG",
+                        "type": "number"
+                    },
+                    {
+                        "name": "NUMBER_OF_SPECIES",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "NUMBER_OF_SAMPLES",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "NUMBER_LAT_LONG",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "TOTAL",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "GRAIN_SIZE_TEXT",
+                        "type": "string"
+                    },
+                    {
+                        "name": "GRAIN_SQ_KM",
+                        "type": "number"
+                    },
+                    {
+                        "name": "AREA_SQ_KM",
+                        "type": "number"
+                    },
+                    {
+                        "name": "CONTACT_1",
+                        "type": ["string","null"]
+                    },
+                    {
+                        "name": "CONTACT_2",
+                        "type": ["string","null"]
+                    },
+                    {
+                        "name": "CONT_1_MAIL",
+                        "type": ["string","null"]
+                    },
+                    {
+                        "name": "CONT_2_MAIL",
+                        "type": ["string","null"]
+                    },
+                    {
+                        "name": "LICENSE",
+                        "size": "10",
+                        "type": "char"
+                    },
+                    {
+                        "name": "WEB_LINK",
+                        "type": "string"
+                    },
+                    {
+                        "name": "DATA_SOURCE",
+                        "type": "string"
+                    },
+                    {
+                        "name": "METHODS",
+                        "type": "string"
+                    },
+                    {
+                        "name": "SUMMARY_METHODS",
+                        "type": "string"
+                    },
+                    {
+                        "name": "LINK_ID",
+                        "type": ["integer","null"]
+                    },
+                    {
+                        "name": "COMMENTS",
+                        "type": ["string","null"]
+                    },
+                    {
+                        "name": "DATE_STUDY_ADDED",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ABUNDANCE_TYPE",
+                        "type": "string"
+                    },
+                    {
+                        "name": "BIOMASS_TYPE",
+                        "size": "10",
+                        "type": "char"
+                    },
+                    {
+                        "name": "SAMPLE_DESC_NAME",
+                        "type": "string"
+                    }
+                ]
+            },
             "url": "https://zenodo.org/record/1095628/files/BioTIMEMetadata_06_12_2017.csv"
         },
         {
             "dialect": {},
             "name": "query",
-            "schema": {},
+            "schema": {
+                "fields" : [
+                    {
+                        "name": "",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "STUDY_ID",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "DAY",
+                        "type": ["string","integer"]
+                    },
+                    {
+                        "name": "MONTH",
+                        "type": ["string","integer"]
+                    },
+                    {
+                        "name": "YEAR",
+                        "type": ["string","integer"]
+                    },
+                    {
+                        "name": "SAMPLE_DESC",
+                        "type": "string"
+                    },
+                    {
+                        "name": "PLOT",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "ID_SPECIES",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "LATITUDE",
+                        "type": "number"
+                    },
+                    {
+                        "name": "LONGITUDE",
+                        "type": "number"
+                    },
+                    {
+                        "name": "sum.allrawdata.ABUNDANCE",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "sum.allrawdata.ABUNDANCE",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "GENUS",
+                        "type": "string"
+                    },
+                    {
+                        "name": "SPECIES",
+                        "type": "string"
+                    },
+                    {
+                        "name": "GENUS_SPECIES",
+                        "type": "string"
+                    }
+                ]
+            },
             "url": "https://zenodo.org/record/1095628/files/BioTIMEQuery_06_12_2017.csv"
         }
     ],
