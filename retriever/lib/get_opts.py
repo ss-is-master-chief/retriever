@@ -19,10 +19,9 @@ keywords_options = set()
 for module in module_list:
     if hasattr(module, "keywords"):
         keywords_options = keywords_options | set(module.keywords)
-    if hasattr(module, "licenses"):
+    if hasattr(module, "licenses") and module.licenses:
         if module.licenses[0]['name']:
             licenses_options = licenses_options | set([module.licenses[0]['name']])
-
 
 parser = argparse.ArgumentParser(prog="retriever")
 parser.add_argument('-v', '--version', action='version', version=VERSION)
@@ -65,12 +64,15 @@ install_parser.add_argument('--compile', help='force re-compile of script before
 install_parser.add_argument('--debug', help='run in debug mode', action='store_true')
 install_parser.add_argument('--not-cached', help='overwrites local cache of raw data', action='store_true')
 download_parser.add_argument('dataset', help='dataset name').completer = ChoicesCompleter(script_list)
+download_parser.add_argument('-b', '--bbox', nargs=4,
+                             help='Set bounding box xmin, ymin, xmax, ymax',
+                             required=False)
+
 ls_parser.add_argument('-l', help='search datasets with specific license(s)',
                        nargs='+').completer = ChoicesCompleter(list(licenses_options))
 ls_parser.add_argument('-k', help='search datasets with keyword(s)',
                        nargs='+').completer = ChoicesCompleter(list(keywords_options))
 ls_parser.add_argument('-v', help='verbose list of all datasets', nargs='*', default=False)
-
 
 delete_json_parser.add_argument('dataset', help='dataset name', choices=json_list)
 # retriever Install {Engine} ..
@@ -83,6 +85,9 @@ for engine in engine_list:
     else:
         engine_parser = install_subparsers.add_parser(engine.abbreviation, help=engine.name)
         engine_parser.add_argument('dataset', help='dataset name').completer = ChoicesCompleter(script_list)
+        engine_parser.add_argument('-b', '--bbox', nargs=4,
+                                   help='Set bounding box xmin, ymin, xmax, ymax',
+                                   required=False)
 
     abbreviations = set('h')
 
