@@ -1,8 +1,34 @@
+#
+# OSGEO modules only work with Python 2
+#
+
 import os
+import sys
 from builtins import range
 
 from retriever.lib.defaults import DATA_DIR
 from retriever.lib.models import Engine, no_cleanup
+
+'''Importing SQLite module'''
+
+try:
+    import sqlite3
+    from sqlite3 import Error
+
+except:
+    sys.exit("ERROR: SQLite not installed... \
+    \nDownload from here => https://www.sqlite.org/download.html")
+
+'''Importing GDAL/OGR module from OSGEO'''
+
+try:
+    #sys.path.insert(0,"/Library/Frameworks/GDAL.framework/Versions/2.2/Python/3.6/site-packages")
+    from osgeo import gdal, ogr
+    gdal.UseExceptions()
+
+except:
+    sys.exit("ERROR: OSGeo not installed... \
+    \nDownload from here => http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries")
 
 
 class engine(Engine):
@@ -29,6 +55,59 @@ class engine(Engine):
                       "Format of table name",
                       "{db}_{table}"),
                      ]
+
+    ##########################
+
+    df = None
+
+    ##########################
+
+    def auto_create_table(self, table, url=None, filename=None, pk=None):
+        if table.dataset_type == "RasterDataset":
+            self.table = table
+            if url and not filename:
+                filename = Engine.filename_from_url(url)
+
+            if url and not self.find_file(filename):
+                # If the file doesn't exist, download it
+                self.download_file(url, filename)
+
+            file_path = self.find_file(filename)
+            filename, file_extension = os.path.splitext(os.path.basename(file_path))
+
+        else:
+            Engine.auto_create_table(self, table, url, filename, pk)
+
+
+    def supported_raster(self, path, ext=None):
+        path = os.path.normpath(os.path.abspath(path))
+        if ext:
+            raster_extensions = ext
+        else:
+            raster_extensions = ['.gif', '.img', '.bil',
+                                 '.jpg', '.tif', '.tiff', '.hdf', '.l1b']
+
+        return [os.path.normpath(os.path.join(root, names))
+                for root, _, files in os.walk(path, topdown=False)
+                for names in files
+                if os.path.splitext(names)[1] in raster_extensions]
+
+    def insert_raster(self, path=None):
+
+        if not path:
+
+            df = gdal.Open(path)
+
+            for band in range(1,df.RasterCount+1):
+
+                os.system("gdal_translate -b {} -of XYZ {} {}.csv \
+                    -co ADD_HEADER_LINE=YES".format(band, path, path))
+
+                os.system("ogr2ogr -update -append -f SQLite {}.sqlite \
+                    -nln b{} {}.csv -dsco METADATA=NO \
+                    -dsco INIT_WITH_EPSG=NO".format(path, band, path))
+
+                os.system("rm {}.csv".format(path))
 
     def create_db(self):
         """Don't create database for SQLite
