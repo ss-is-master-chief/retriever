@@ -1,34 +1,9 @@
-#
-# OSGEO modules only work with Python 2
-#
-
 import os
 import sys
 from builtins import range
 
 from retriever.lib.defaults import DATA_DIR
 from retriever.lib.models import Engine, no_cleanup
-
-'''Importing SQLite module'''
-
-try:
-    import sqlite3
-    from sqlite3 import Error
-
-except:
-    sys.exit("ERROR: SQLite not installed... \
-    \nDownload from here => https://www.sqlite.org/download.html")
-
-'''Importing GDAL/OGR module from OSGEO'''
-
-try:
-    #sys.path.insert(0,"/Library/Frameworks/GDAL.framework/Versions/2.2/Python/3.6/site-packages")
-    from osgeo import gdal, ogr
-    gdal.UseExceptions()
-
-except:
-    sys.exit("ERROR: OSGeo not installed... \
-    \nDownload from here => http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries")
 
 
 class engine(Engine):
@@ -62,8 +37,25 @@ class engine(Engine):
 
     ##########################
 
+    """Importing GDAL/OGR module from OSGEO (suppports only Python2)"""
+
+    def import_osgeo(self, table):
+        if table.dataset_type == "RasterDataset":
+            try:
+                #sys.path.insert(0,"/Library/Frameworks/GDAL.framework/Versions/2.2/Python/3.6/site-packages")
+                from osgeo import gdal, ogr
+                gdal.UseExceptions()
+
+            except:
+                sys.exit("ERROR: OSGeo not installed... \
+                \nDownload from here => http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries")
+
+
     def auto_create_table(self, table, url=None, filename=None, pk=None):
         if table.dataset_type == "RasterDataset":
+
+            self.import_osgeo(table)
+
             self.table = table
             if url and not filename:
                 filename = Engine.filename_from_url(url)
@@ -99,7 +91,7 @@ class engine(Engine):
             df = gdal.Open(path)
 
             for band in range(1,df.RasterCount+1):
-
+                
                 os.system("gdal_translate -b {} -of XYZ {} {}.csv \
                     -co ADD_HEADER_LINE=YES".format(band, path, path))
 
@@ -182,6 +174,15 @@ class engine(Engine):
 
     def get_connection(self):
         """Get db connection."""
-        import sqlite3 as dbapi
+
+        """Importing SQLite module"""
+        try:
+            import sqlite3as as dbapi
+            from sqlite3 import Error
+
+        except:
+            sys.exit("ERROR: SQLite not installed... \
+            \nDownload from here => https://www.sqlite.org/download.html")
+
         self.get_input()
         return dbapi.connect(self.opts["file"])
